@@ -1,0 +1,14 @@
+{
+  "name": "tcafeedu",
+  "version": "1.0.0",
+  "description": "testcafe denemeleri",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe chrome ./tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^1.16.0"
+  }
+}
