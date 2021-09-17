@@ -1,0 +1,94 @@
+#TESTCAFE NOTLARIM 1
+kurulum icin proje dizininde su komutu calistir
+npm init
+
+install locally
+npm install testcafe --save-dev
+
+install globally
+npm install testcafe -g
+
+odiger browserlari tanimlayabiliriz. package.json dosyasinin icinde
+
+ "scripts": {
+    "test:chrome": "testcafe chrome ./tests",
+    "test:chrome:headless": "testcafe chrome:headless ./tests",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iphone X ./tests",
+    "test:safari": "testcafe safari ./tests",
+    "test:opera": "testcafe opera ./tests"
+
+
+ancak komutu bu kez
+npm run test:chrome
+npm run test:safari
+
+testin hizini artirma.. before each icine koymak mantikli
+//    await t.setTestSpeed(0.1) //between 1 to 0.1
+
+
+testi durdurma
+    await t.wait(3000)// 3 seconds wait.
+
+
+failing screenshot
+.testcafers.json icersine
+{
+    "screenshotPath":"./screenshots",
+    "screenshotPathPattern":"${DATE}_${TIME}/${FIXTURE}.png" 
+}
+sonra package.json icerisindeki test comutlari sonuna
+    -s takeOnfails=true  yu ekleyecegiz
+
+
+    -----
+    SETTING PAGE TIMEOUT
+await t.setPageLoadTimeout(5000)
+     
+     page cashing
+     "test:chrome": "testcafe chrome ./tests -s takeOnFails=true --disable-page-cashing",
+
+ACTION API
+
+
+// paralel test execution
+add package.json 
+    "test:chrome:5":"testcafe -c 5 chrome ./tests -s takeOnfails=true",
+
+// using XPATH
+npm install --save-dev xpath-to-css
+and import the  
+import xPathToCss from 'xpath-to-css'
+
+    const xpathVar="//a[.='Account Activity']"
+    const cssElement=xPathToCss(xpathVar)
+
+
+//multiple browsers
+    "test:multiple":"testcafe chrome, firefox ./test -s takeOnFails=true"
+
+//REPORT
+    json reporter
+    npm install testcafe-reporter-json
+    go to scripts
+    "test:chrome": "testcafe chrome ./tests --reporter json",
+
+
+    // xunit reporter  --xml REPORT
+     npm install testcafe-reporter-xunit
+     go to scripts
+    "test:chrome": "testcafe chrome ./tests --reporter xunit",
+
+     // Nunit reporter  --kindof xml REPORT--more info
+     npm install testcafe-reporter-nunit
+     go to scripts
+    "test:chrome": "testcafe chrome ./tests --reporter nunit",
+
+    #LIST reporter  
+     npm install testcafe-reporter-list
+     go to scripts
+    "test:chrome": "testcafe chrome ./tests --reporter list",
+
+    #Minimal reporter  -- 
+     npm install testcafe-reporter-minimal
+     go to scripts
+    "test:chrome": "testcafe chrome ./tests --reporter minimal",

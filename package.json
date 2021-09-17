@@ -4,11 +4,22 @@
   "description": "testcafe denemeleri",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe chrome ./tests"
+    "test:chrome": "testcafe chrome ./tests -s takeOnFails=true",
+    "test:chrome:5": "testcafe -c 5 chrome ./tests -s takeOnfails=true",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
+    "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./tests -s takeOnFails=true",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iphone X ./tests -s takeOnFails=true",
+    "test:safari": "testcafe safari ./tests -s takeOnFails=true",
+    "test:opera": "testcafe opera ./tests -s takeOnFails=true",
+    "test:firefox": "testcafe firefox ./tests -s takeOnFails=true",
+    "test:multiple": "testcafe chrome, safari ./tests -s takeOnFails=true"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "testcafe": "^1.16.0"
+  },
+  "devDependencies": {
+    "xpath-to-css": "^1.0.5"
   }
 }
