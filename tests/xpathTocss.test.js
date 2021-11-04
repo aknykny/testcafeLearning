@@ -1,8 +1,5 @@
-import { Selector, t } from 'testcafe'
-// import {login, logOut} from '../helper'
-import LoginPage from '../page-objects/pages/LoginPage'
-import xPathToCss from 'xpath-to-css'
-import Navbar from '../page-objects/components/Navbar'
+import LoginPage from './pages/LoginPage'
+import Navbar from './pages/Navbar'
 
 const loginpage=new LoginPage()
 const navbar=new Navbar()

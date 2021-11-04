@@ -4,7 +4,7 @@
   "description": "testcafe denemeleri",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "testcafe chrome ./tests -s takeOnFails=true",
+    "test": "testcafe",
     "test:chrome:5": "testcafe -c 5 chrome ./tests -s takeOnfails=true",
     "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true",
     "test:chrome:headless:5": "testcafe -c 5 chrome:headless ./tests -s takeOnFails=true",
@@ -16,10 +16,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "testcafe": "^1.16.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@testing-library/testcafe": "^4.4.0",
+    "testcafe": "^1.16.1",
     "xpath-to-css": "^1.0.5"
   }
 }

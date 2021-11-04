@@ -1,4 +1,9 @@
-{
+{   
+    "browsers":"firefox:headless",
     "screenshotPath":"./screenshots",
-    "screenshotPathPattern":"${DATE}_${TIME}/${FIXTURE}_${TEST}.png" 
+    "screenshotPathPattern":"${DATE}_${TIME}/${FIXTURE}_${TEST}.png" ,
+    "clientScripts": [
+        { "module": "@testing-library/dom/dist/@testing-library/dom.umd.js" }
+      ],
+      "testSpeed":0.1
 }

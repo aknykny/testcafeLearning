@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe'
-import Navbar from './../page-objects/components/Navbar'
+import Navbar from './pages/Navbar'
 
 const navbar = new Navbar()
 

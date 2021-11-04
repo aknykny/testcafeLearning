@@ -1,5 +1,5 @@
 import { Selector, t } from "testcafe";
-import BasePage from "../pages/BasePage";
+import BasePage from "./BasePage";
 
 class Navbar extends BasePage{
     constructor(){
